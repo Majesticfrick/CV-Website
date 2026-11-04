@@ -208,6 +208,7 @@ footer { position: relative; z-index: 2; border-top: 1px solid var(--border); pa
 .proj-tags { font-family: var(--mono); font-size: 0.72rem; color: var(--it); margin-bottom: 0.5rem; }
 .proj-title { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; margin-bottom: 0.4rem; }
 .proj-desc { color: var(--muted); line-height: 1.65; }
+.proj-card img.contain { object-fit: contain; background: var(--term-bg); }
 
 /* ===== ANIMATIONER ===== */
 .blink { color: var(--it); animation: blink 1.2s step-end infinite; }
