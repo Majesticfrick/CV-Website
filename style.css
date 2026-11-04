@@ -194,12 +194,28 @@ section { padding: 5rem 0; border-top: 1px solid var(--border); }
 
 footer { position: relative; z-index: 2; border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-family: var(--mono); font-size: 0.78rem; color: var(--muted); }
 
-/* ===== PROJEKTER ===== */
-.proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
-.proj-card { overflow: hidden; }
+/* ===== PROJEKTER (galleri man bladrer i) ===== */
+.proj-controls { display: flex; gap: 0.5rem; }
+.proj-btn {
+  width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface);
+  font-size: 1rem; color: var(--text); transition: all 0.2s;
+}
+.proj-btn:hover:not(:disabled) { border-color: var(--accent); color: #fffbf3; background: var(--accent); }
+.proj-btn:disabled { opacity: 0.35; }
+
+.proj-track {
+  display: flex; gap: 1.25rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  padding: 0.5rem 0.25rem 1.5rem; margin: -0.5rem -0.25rem 0; /* plads til hover-løft og skygge */
+  scrollbar-width: thin; scrollbar-color: var(--border) transparent;
+}
+.proj-track.dragging { scroll-snap-type: none; scroll-behavior: auto; user-select: none; }
+.proj-track.dragging img { pointer-events: none; }
+
+.proj-card { flex: 0 0 320px; scroll-snap-align: start; overflow: hidden; }
 .proj-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 14px 32px rgba(200,22,29,0.12); }
 /* Billede eller pladsholder: samme størrelse uanset format */
-.proj-card img, .proj-thumb { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; border-bottom: 1px solid var(--border); }
+.proj-card img, .proj-thumb { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; border-bottom: 1px solid var(--border); }
+.proj-card img.contain { object-fit: contain; background: var(--term-bg); } /* til høje billeder */
 .proj-thumb {
   display: grid; place-items: center; font-family: var(--mono); font-size: 0.9rem; color: var(--term-green);
   background: var(--term-bg) radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px) 0 0 / 16px 16px;
@@ -208,7 +224,7 @@ footer { position: relative; z-index: 2; border-top: 1px solid var(--border); pa
 .proj-tags { font-family: var(--mono); font-size: 0.72rem; color: var(--it); margin-bottom: 0.5rem; }
 .proj-title { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; margin-bottom: 0.4rem; }
 .proj-desc { color: var(--muted); line-height: 1.65; }
-.proj-card img.contain { object-fit: contain; background: var(--term-bg); }
+@media (max-width: 768px) { .proj-card { flex-basis: 85%; } }
 
 /* ===== ANIMATIONER ===== */
 .blink { color: var(--it); animation: blink 1.2s step-end infinite; }

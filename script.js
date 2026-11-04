@@ -203,3 +203,43 @@ setTimeout(() => {
   inputLine.style.display = 'flex';
   typeCommand('whoami', () => { print(m('→ Prøv ') + k('help') + m(' for at se flere kommandoer.')); scrollDown(); });
 }, 1100);
+
+/* ===== PROJEKT-GALLERI ===== */
+const track = document.getElementById('projTrack');
+const prevBtn = document.getElementById('projPrev');
+const nextBtn = document.getElementById('projNext');
+
+// Hvor langt ét klik flytter: ét kort + mellemrum
+const step = () => track.querySelector('.proj-card').offsetWidth + 20;
+prevBtn.addEventListener('click', () => track.scrollBy({ left: -step() }));
+nextBtn.addEventListener('click', () => track.scrollBy({ left: step() }));
+
+// Slå pilene fra, når man er i starten eller slutningen
+function updateButtons() {
+  prevBtn.disabled = track.scrollLeft <= 5;
+  nextBtn.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
+}
+track.addEventListener('scroll', updateButtons);
+window.addEventListener('resize', updateButtons);
+updateButtons();
+
+// Træk med musen for at bladre (på mobil swiper man bare)
+let dragStart = 0, scrollStart = 0, dragging = false, moved = false;
+track.addEventListener('mousedown', e => {
+  dragging = true; moved = false;
+  dragStart = e.pageX; scrollStart = track.scrollLeft;
+});
+window.addEventListener('mousemove', e => {
+  if (!dragging) return;
+  const dx = e.pageX - dragStart;
+  if (Math.abs(dx) > 5) { moved = true; track.classList.add('dragging'); }
+  track.scrollLeft = scrollStart - dx;
+});
+window.addEventListener('mouseup', () => {
+  if (!dragging) return;
+  dragging = false;
+  track.classList.remove('dragging'); // snap til nærmeste kort igen
+});
+track.addEventListener('dragstart', e => e.preventDefault()); // ingen "spøgelsesbillede" når man trækker
+// Undgå at et træk tæller som et klik på et link i kortet
+track.addEventListener('click', e => { if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
