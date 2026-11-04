@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alexander Peter Wolfram — CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="cursor-glow" id="glow"></div>
+<div class="custom-cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <div class="nav-logo">APW<span>~/portfolio</span></div>
+  <ul class="nav-links">
+    <li><a href="#om">om</a></li>
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#erfaring">erfaring</a></li>
+    <li><a href="#uddannelse">uddannelse</a></li>
+    <li><a href="#referencer">referencer</a></li>
+    <li><a href="#kontakt">kontakt</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="hero">
+    <div>
+      <p class="hero-pre">hello world, jeg hedder</p>
+      <h1>Alexander<br><span class="line2">Peter</span> <span class="accent">Wolfram</span></h1>
+      <p class="hero-desc">Jeg uddanner mig i øjeblikket til IT-supporter. Hjemmesiden er lavet som et testprojekt, hvor jeg afprøver webudvikling i praksis.<span class="blink">_</span></p>
+      <div class="hero-tags">
+        <span class="tag">C#</span> <span class="tag">Python</span> <span class="tag">IT-support</span> <span class="tag">Windows</span>
+        <span class="tag">Fejlfinding</span> <span class="tag">Kundeservice</span> <span class="tag">Netværk</span>
+        <span class="tag">Softwareudvikling</span> <span class="tag">Blender</span> <span class="tag">Davinci resolve</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#kontakt" class="btn btn-primary">Kontakt mig</a>
+        <a href="#erfaring" class="btn btn-outline">Tidligere erfaring</a>
+      </div>
+    </div>
+
+    <div class="terminal-wrap">
+      <div class="terminal" id="terminal">
+        <div class="term-bar">
+          <span class="term-dot r"></span><span class="term-dot y"></span><span class="term-dot g"></span>
+          <span class="term-title">majestic@portfolio: ~</span>
+        </div>
+        <div class="term-body" id="termBody">
+          <div id="termOutput"></div>
+          <div class="term-input-line" id="termInputLine" style="display:none">
+            <span><span class="t-prompt">majestic@portfolio</span>:<span class="t-path">~</span>$</span>
+            <input class="term-input" id="termInput" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal-kommando" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="om">
+    <div class="section-header reveal"><span class="section-num">01</span><h2 class="section-title">Om mig</h2><div class="section-line"></div></div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Jeg er 24 år og har en bred baggrund – fra slagterbutikken over detailhandel til IT. Lige nu læser jeg Data og Kommunikation, hvor jeg arbejder med Cisco, Ubuntu, Windows og opsætning af servere.</p>
+        <p>Jeg har været med til at starte <a href="https://www.rezervera.com/" target="_blank">Rezervera</a>, hvilket har givet mig indblik i mange sider af IT – fra drift til kundekontakt.</p>
+        <p>Hos Power lærte jeg salg og kundekommunikation i en travl hverdag. Som slagter – og senere stand-in slagtermester og lukkeansvarlig i Føtex – lærte jeg at tage ansvar, træffe beslutninger og holde hovedet koldt, når det går stærkt.</p>
+        <p>I fritiden bygger jeg hjemmesider og nørder med, hvordan spil og digitale produkter er skruet sammen. Det er den nysgerrighed, der driver mig mod IT.</p>
+      </div>
+      <div class="about-stats reveal">
+        <div class="stat-card"><div class="stat-num">1+</div><div class="stat-label">års IT-erfaring</div></div>
+        <div class="stat-card"><div class="stat-num">4</div><div class="stat-label">programmeringssprog</div></div>
+        <div class="stat-card"><div class="stat-num">1</div><div class="stat-label">startup medstiftet</div></div>
+        <div class="stat-card"><div class="stat-num">∞</div><div class="stat-label">nysgerrighed</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-header reveal"><span class="section-num">02</span><h2 class="section-title">Kompetencer</h2><div class="section-line"></div></div>
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <div class="skill-group-title">programmering</div>
+        <ul class="skill-list"><li>C# / .NET</li><li>Python</li><li>HTML &amp; CSS</li></ul>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">it-support</div>
+        <ul class="skill-list"><li>Fejlfinding i Windows 10/11</li><li>Hardware- og softwaresupport</li><li>Active Directory (basis)</li><li>Netværksforståelse</li></ul>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">soft-skills</div>
+        <ul class="skill-list"><li>Klar kommunikation</li><li>Kundeservice og salg</li><li>Problemløsning</li><li>Samarbejde</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="erfaring">
+    <div class="section-header reveal"><span class="section-num">03</span><h2 class="section-title">Erfaring</h2><div class="section-line"></div></div>
+    <div class="exp-list">
+      <div class="exp-card reveal">
+        <div class="exp-top"><div class="exp-title">Medstifter · IT- og kundeansvarlig</div><div class="exp-date">2024 – nu</div></div>
+        <div class="exp-company">Rezervera (startup)</div>
+        <div class="exp-desc">Var med til at starte et IT- og softwarefirma. Ansvarlig for den daglige drift, tekniske forretningsprocesser og kundekontakt.</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-top"><div class="exp-title">Sælger og kundesagsansvarlig</div><div class="exp-date">Tidligere</div></div>
+        <div class="exp-company">Power</div>
+        <div class="exp-desc">Rådgivning og salg af elektronik, samt håndtering af kundesager fra start til slut.</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-top"><div class="exp-title">Slagter → stand-in slagtermester → teamkoordinator</div><div class="exp-date">Tidligere</div></div>
+        <div class="exp-company">Salling Group (Føtex)</div>
+        <div class="exp-desc">Startede som slagterelev og blev udlært slagtersvend. Fik siden ansvaret som stand-in slagtermester og lukkeansvarlig, og sluttede som teamkoordinator i food-afdelingen.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="uddannelse">
+    <div class="section-header reveal"><span class="section-num">04</span><h2 class="section-title">Uddannelse</h2><div class="section-line"></div></div>
+    <div class="edu-card reveal">
+      <div class="edu-icon">&lt;/&gt;</div>
+      <div>
+        <div class="edu-title">Data og Kommunikation</div>
+        <div class="edu-sub">Igangværende · Fokus på C#, Python, operativsystemer og IT-infrastruktur</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="referencer">
+    <div class="section-header reveal"><span class="section-num">05</span><h2 class="section-title">Referencer</h2><div class="section-line"></div></div>
+    <p class="section-intro reveal">Tidligere ledere og kolleger, der gerne fortæller om, hvordan jeg er at arbejde sammen med.</p>
+    <div class="ref-grid">
+      <!-- Kopiér et ref-card for at tilføje flere referencer -->
+      <div class="ref-card reveal">
+        <div class="ref-company">@power</div>
+        <div class="ref-name">[Navn]</div>
+        <div class="ref-role">[Titel, fx butikschef]</div>
+        <div class="ref-contact"><span class="k">tlf:</span> [Telefon]<br><span class="k">mail:</span> [Email]</div>
+      </div>
+      <div class="ref-card reveal">
+        <div class="ref-company">@føtex</div>
+        <div class="ref-name">[Navn]</div>
+        <div class="ref-role">[Titel, fx slagtermester]</div>
+        <div class="ref-contact"><span class="k">tlf:</span> [Telefon]<br><span class="k">mail:</span> [Email]</div>
+      </div>
+      <div class="ref-card reveal">
+        <div class="ref-company">@rezervera</div>
+        <div class="ref-name">[Navn]</div>
+        <div class="ref-role">[Titel, fx medstifter]</div>
+        <div class="ref-contact"><span class="k">tlf:</span> [Telefon]<br><span class="k">mail:</span> [Email]</div>
+      </div>
+    </div>
+    <p class="ref-note reveal">Flere referencer gives gerne efter aftale.</p>
+  </section>
+
+  <section id="kontakt">
+    <div class="section-header reveal"><span class="section-num">06</span><h2 class="section-title">Kontakt</h2><div class="section-line"></div></div>
+    <div class="contact-grid">
+      <a href="mailto:din@email.dk" class="contact-card reveal">
+        <div class="contact-icon">@</div>
+        <div><div class="contact-label">email</div><div class="contact-value">wollejunior@live.dk</div></div>
+      </a>
+      <a href="tel:+4500000000" class="contact-card reveal">
+        <div class="contact-icon">☎</div>
+        <div><div class="contact-label">telefon</div><div class="contact-value">+45 42 39 58 88</div></div>
+      </a>
+      <a href="https://linkedin.com/in/dit-navn" target="_blank" class="contact-card reveal">
+        <div class="contact-icon">in</div>
+        <div><div class="contact-label">linkedin</div><div class="contact-value">Kommer snart</div></div>
+      </a>
+      <a href="https://github.com/dit-navn" target="_blank" class="contact-card reveal">
+        <div class="contact-icon">&lt;/&gt;</div>
+        <div><div class="contact-label">github</div><div class="contact-value">Kommer snart</div></div>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer><p>// lavet med kaffe og nysgerrighed <span class="blink">_</span></p></footer>
+
+<script src="script.js"></script>
+</body>
+</html>
