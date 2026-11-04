@@ -29,6 +29,12 @@ body::before {
   background-size: auto, auto, 24px 24px;
 }
 
+/* ===== NETVÆRKS-BAGGRUND ===== */
+#bgNet {
+  position: fixed; inset: 0; width: 100%; height: 100%;
+  z-index: 0; pointer-events: none; /* ligger bag indholdet og blokerer ikke klik */
+}
+
 /* ===== MUS: prik + ring der glider efter ===== */
 .cursor-glow {
   position: fixed; width: 420px; height: 420px; border-radius: 50%; pointer-events: none; z-index: 1;
