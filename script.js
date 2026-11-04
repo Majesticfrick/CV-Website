@@ -18,7 +18,7 @@ document.addEventListener('mousemove', e => {
 })();
 
 // Ringen vokser over links, knapper og kort
-const hoverTargets = 'a, button, .tag, .stat-card, .skill-group, .exp-card, .ref-card';
+const hoverTargets = 'a, button, .tag, .stat-card, .skill-group, .exp-card, .ref-card, .proj-card';
 document.addEventListener('mouseover', e => ring.classList.toggle('hover', !!e.target.closest(hoverTargets)));
 document.addEventListener('mousedown', () => ring.classList.add('down'));
 document.addEventListener('mouseup', () => ring.classList.remove('down'));
@@ -40,7 +40,7 @@ const body = document.getElementById('termBody');
 const input = document.getElementById('termInput');
 const inputLine = document.getElementById('termInputLine');
 const PROMPT = '<span class="t-prompt">majestic@portfolio</span>:<span class="t-path">~</span>$ ';
-const sections = ['om', 'skills', 'erfaring', 'uddannelse', 'referencer', 'kontakt'];
+const sections = ['om', 'skills', 'erfaring', 'uddannelse', 'projekter', 'referencer', 'kontakt'];
 
 // Små hjælpere, så teksten herunder bliver kortere
 const k = t => `<span class="t-key">${t}</span>`;     // orange
@@ -57,6 +57,8 @@ const commands = {
     `  ${k('skills')}       mine kompetencer`,
     `  ${k('erfaring')}     hvor jeg har arbejdet`,
     `  ${k('uddannelse')}   hvad jeg læser`,
+    `  ${k('projekter')}    ting jeg har bygget`,
+    `  ${k('projekter')}    ting jeg har bygget`,
     `  ${k('referencer')}   hvem du kan spørge`,
     `  ${k('kontakt')}      sådan fanger du mig`,
     `  ${k('ls')}           vis sektioner`,
@@ -81,13 +83,21 @@ const commands = {
     `${k('soft_skills')}   = ${list(['Kommunikation', 'Kundeservice', 'Problemløsning'])}`
   ],
   erfaring: () => [
-    `${g('[2024 – nu]')}  Medstifter · IT- og kundeansvarlig ${m('@ Rezervera')}`,
+    `${g('[2026 – nu]')}  Tjener og oplæringsansvarlig ${m('@ Copoke sushibar')}`,
+    `${g('[2024 – nu]')}  IT- og kundeansvarlig ${m('@ Rezervera')}`,
     `${g('[tidligere]')}  Sælger og kundesagsansvarlig ${m('@ Power')}`,
     `${g('[tidligere]')}  Slagter → stand-in slagtermester → teamkoordinator ${m('@ Føtex')}`,
     m('Skriv "cd erfaring" for detaljer.')
   ],
   uddannelse: () => [g('Data og Kommunikation') + ' ' + m('(igangværende)'), 'Fokus: C#, Python, operativsystemer og IT-infrastruktur'],
-  referencer: () => ['Referencer fra Power, Føtex og Rezervera.', m('Skriv "cd referencer" for at se dem.')],
+  projekter: () => [
+    `${g('[netværk]')}  CCNA netværkslab ${m('· Cisco, OSPF, HSRP')}`,
+    `${g('[server]')}   Active Directory-lab ${m('· Windows Server, PowerShell')}`,
+    `${g('[linux]')}    Linux-servere bag firewall ${m('· Rocky Linux, pfSense')}`,
+    `${g('[web]')}      Denne hjemmeside ${m('· HTML, CSS, JS')}`,
+    m('Skriv "cd projekter" for at se dem.')
+  ],
+  referencer: () => ['Referencer fra Power, Føtex, Rezervera og MENY.', m('Skriv "cd referencer" for at se dem.')],
   kontakt: () => [
     `${k('email')}   <a href="mailto:wollejunior@live.dk">wollejunior@live.dk</a>`,
     `${k('telefon')} +45 42 39 58 88`,
